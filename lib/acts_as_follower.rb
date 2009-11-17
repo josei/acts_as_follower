@@ -57,12 +57,12 @@ module ActiveRecord #:nodoc:
         
         # Returns the follow records related to this instance with the followable included.
         def all_follows
-          self.follows.unblocked.all(:include => :followable)
+          self.follows.unblocked.scoped(:include => :followable)
         end
         
         # Returns the actual records which this instance is following.
-        def all_following
-          all_follows.collect{ |f| f.followable }
+        def all_following(options={})
+          all_follows.all(options).collect{ |f| f.followable }
         end
         
         # Returns the actual records of a particular type which this record is following.
