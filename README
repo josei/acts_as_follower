@@ -1,6 +1,8 @@
 ActsAsFollower
 ==============
 
+Rails 3 enabled.
+
 acts_as_follower is a plugin to allow any model to "follow" any other model.
 
 Main uses would be for Users to follow other Users or for Users to follow Books, etc...
